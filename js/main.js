@@ -4,6 +4,7 @@ $(function() {
     // create a variable that counts clicks
     var val = 0;
     var clickCount = 0;
+
     $('.btn-xl').click(function() {
         clickCount = (val++);
     });
@@ -14,12 +15,6 @@ $(function() {
         buttons.push(this.id);
     });
 
-    // loop through the array to assign X to each button
-    // alternate player clicks. X clicks first. (modulus)
-    // for (var i = 0; i < buttons.length; i++) {
-    // buttons[i]
-
-
     $('#a').click(function() {
         if (clickCount % 2 === 0) {
             var shape = "<img src='images/X.png'>";
@@ -27,6 +22,12 @@ $(function() {
             shape = "<img src='images/O.png'>";
         }
         $(this).html(shape);
+        // onclick, addClass to button to only allow one click
+        $(this).addClass('occupied');
+        // create a conditional that only lets you click on a button once
+        if ($('div').hasClass('occupied')) {
+          $(this).off();
+        }
     });
 
     $('#b').click(function() {
@@ -36,6 +37,10 @@ $(function() {
             shape = "<img src='images/O.png'>";
         }
         $(this).html(shape);
+        $(this).addClass('occupied');
+        if ($('div').hasClass('occupied')) {
+          $(this).off();
+        }
     });
 
     $('#c').click(function() {
@@ -45,6 +50,10 @@ $(function() {
           shape = "<img src='images/O.png'>";
         }
       $(this).html(shape);
+      $(this).addClass('occupied');
+      if ($('div').hasClass('occupied')) {
+          $(this).off();
+        }
     });
 
     $('#d').click(function() {
@@ -54,6 +63,10 @@ $(function() {
           shape = "<img src='images/O.png'>";
         }
         $(this).html(shape);
+        $(this).addClass('occupied');
+        if ($('div').hasClass('occupied')) {
+          $(this).off();
+        }
     });
 
     $('#e').click(function() {
@@ -63,6 +76,10 @@ $(function() {
           shape = "<img src='images/O.png'>";
         }
         $(this).html(shape);
+        $(this).addClass('occupied');
+        if ($('div').hasClass('occupied')) {
+          $(this).off();
+        }
     });
 
     $('#f').click(function() {
@@ -72,6 +89,10 @@ $(function() {
           shape = "<img src='images/O.png'>";
         }
         $(this).html(shape);
+        $(this).addClass('occupied');
+        if ($('div').hasClass('occupied')) {
+          $(this).off();
+        }
     });
 
     $('#g').click(function() {
@@ -81,6 +102,10 @@ $(function() {
           shape = "<img src='images/O.png'>";
         }
         $(this).html(shape);
+        $(this).addClass('occupied');
+        if ($('div').hasClass('occupied')) {
+          $(this).off();
+        }
     });
 
     $('#h').click(function() {
@@ -90,6 +115,10 @@ $(function() {
           shape = "<img src='images/O.png'>";
         }
         $(this).html(shape);
+        $(this).addClass('occupied');
+        if ($('div').hasClass('occupied')) {
+          $(this).off();
+        }
     });
 
     $('#j').click(function() {
@@ -99,6 +128,10 @@ $(function() {
           shape = "<img src='images/O.png'>";
         }
         $(this).html(shape);
+        $(this).addClass('occupied');
+        if ($('div').hasClass('occupied')) {
+          $(this).off();
+        }
     });
 });
 
@@ -124,6 +157,9 @@ $(function() {
 // clear board function
 $('.clear').click(function() {
     $('.btn').empty();
+    if ($('div').hasClass('.btn-xl')) {
+
+    }
 });
 
 // });
