@@ -10,12 +10,10 @@ $(function() {
         clickCount++;
     });
 
-    // create a function to wrap click functions
     var X = [];
     var O = [];
 
     $('.btn-xl').click(function() {
-        // create a conditional that only lets you click on a button once
 
         var shape;
         if (clickCount % 2 === 0) {
@@ -37,12 +35,9 @@ $(function() {
         $(this).html(shape);
         // onclick, addClass to button to only allow one click
         $(this).addClass('occupied');
-
-
     });
 
     function getWinner(array, player) {
-        // if
         if (array.includes('a') && array.includes('b') && array.includes('c')) {
             array.push('winner');
             $('#banner').html(player + ' Wins!');
@@ -71,14 +66,12 @@ $(function() {
     }
 
     function tie(array, player) {
-        // if
-        if (array.includes('winner'))  {
-          $('#banner').html('Players Tie!');
+          if (array.includes('winner'))  {
+            return false;
+          } else if (clickCount === 10) {
+            $('#banner').html('Players Tie!');
+          }
         }
-    }
-
-
-
     // clear board function
     $('.clear').click(function() {
         $('.btn-xl').html('');
