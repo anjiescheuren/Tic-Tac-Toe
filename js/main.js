@@ -19,6 +19,7 @@ $(function() {
         if (clickCount % 2 === 0) {
             var playerx = $('.player1').val();
             shape = "<img src='images/X.png' class='image'>";
+            $('img').css('background-color');
             var selection = $(this).attr("id");
             X.push(selection);
             getWinner(X, playerx);
