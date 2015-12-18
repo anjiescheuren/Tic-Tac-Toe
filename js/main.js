@@ -2,7 +2,7 @@
 $(function() {
 
     // create a variable that counts clicks
-    var clickCount = 0;
+    var clickCount = 1;
     $('.btn-xl').click(function() {
         if ($(this).hasClass('occupied')) {
             return false;}
@@ -18,18 +18,18 @@ $(function() {
 
             var shape;
             if (clickCount % 2 === 0) {
-                var p2 = 'Player 2';
+                var playerx = 'Player X';
                 shape = "<img src='images/X.png' class='image'>";
                 var selection = $(this).attr("id");
                 X.push(selection);
-                getWinner(X, p2);
+                getWinner(X, playerx);
 
             } else {
-                var p1 = 'Player 1';
+                var playero = 'Player O';
                 shape = "<img src='images/O.png' class='image'>";
                 var selection = $(this).attr("id");
                 O.push(selection);
-                getWinner(O, p1);
+                getWinner(O, playero);
             }
             $(this).html(shape);
             // onclick, addClass to button to only allow one click
@@ -41,8 +41,21 @@ $(function() {
     function getWinner(array, player) {
     // if
       if (array.includes('a') && array.includes('b') && array.includes('c')) {
-        $('#banner').html(player + ' WINS!');
-        console.log(array);
+        $('#banner').html(player + ' Wins!');
+      } else if (array.includes('d')&&array.includes('e')&&array.includes('f')) {
+        $('#banner').html(player + ' Wins!');
+      }  else if (array.includes('g')&&array.includes('h')&&array.includes('j')) {
+        $('#banner').html(player + ' Wins!');
+      }  else if (array.includes('a')&&array.includes('d')&&array.includes('g')) {
+        $('#banner').html(player + ' Wins!');
+      }  else if (array.includes('b')&&array.includes('e')&&array.includes('h')) {
+        $('#banner').html(player + ' Wins!');
+      }  else if (array.includes('c')&&array.includes('f')&&array.includes('j')) {
+        $('#banner').html(player + ' Wins!');
+      }  else if (array.includes('a')&&array.includes('e')&&array.includes('j')) {
+        $('#banner').html(player + ' Wins!');
+      }  else if (array.includes('c')&&array.includes('e')&&array.includes('g')) {
+        $('#banner').html(player + ' Wins!');
       }
     // array X includes a&&b&&c || d&&e&&f || g&&h&&j
     // || a&&d&&g || b&&e&&h || c&&f&&j || a&&e&&j ||
@@ -67,8 +80,11 @@ $(function() {
         // clear board function
     $('.clear').click(function() {
         $('.btn-xl').html('');
+        $('#banner').html('');
         $('.btn-xl').removeClass('occupied');
-        clickCount = 0;
+        X = [];
+        O = [];
+        clickCount = 1;
     });
 
 });
