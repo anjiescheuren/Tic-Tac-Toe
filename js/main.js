@@ -3,146 +3,142 @@ $(function() {
 
     // create a variable that counts clicks
     var clickCount = 0;
-
     $('.btn-xl').click(function() {
-      debugger
-        clickCount ++;
+        if ($(this).hasClass('occupied')) {
+            return false;}
+        clickCount++;
     });
 
     // create a function to wrap click functions
-    function buttonClick() {
-      debugger
-        $('#a').click(function() {
+    var X = [];
+    var O = [];
+
+        $('.btn-xl').click(function() {
+            // create a conditional that only lets you click on a button once
+
             var shape;
             if (clickCount % 2 === 0) {
-                shape = "<img src='images/X.png' class='image' value='1'>";
+                shape = "<img src='images/X.png' class='image'>";
+                var selection = $(this).attr("id");
+                X.push(selection);
+                console.log(X);
+
             } else {
-                shape = "<img src='images/O.png' class='image' value='10'>";
+                shape = "<img src='images/O.png' class='image'>";
+                var selection = $(this).attr("id");
+                O.push(selection);
+                console.log(O);
             }
             $(this).html(shape);
             // onclick, addClass to button to only allow one click
             $(this).addClass('occupied');
-            // create a conditional that only lets you click on a button once
-            if ($('div').hasClass('occupied')) {
-                // $(this).off();
-                console.log($('img').val());
-            }
+
         });
 
-        $('#b').click(function() {
-            var shape;
-            if (clickCount % 2 === 0) {
-                shape = "<img src='images/X.png' class='image' value=1>";
-            } else {
-                shape = "<img src='images/O.png' class='image' value=10>";
-            }
-            $(this).html(shape);
-            $(this).addClass('occupied');
-            if ($('div').hasClass('occupied')) {
-                // $(this).off();
-            }
-        });
+        // clear board function
+    $('.clear').click(function() {
+        $('.btn-xl').html('');
+        $('.btn-xl').removeClass('occupied');
+        clickCount = 0;
+    });
 
-        $('#c').click(function() {
-            var shape;
-            if (clickCount % 2 === 0) {
-                shape = "<img src='images/X.png' class='image' value=1>";
-            } else {
-                shape = "<img src='images/O.png' class='image' value=10>";
-            }
-            $(this).html(shape);
-            $(this).addClass('occupied');
-            if ($('div').hasClass('occupied')) {
-                // $(this).off();
-            }
-        });
+});
 
-        $('#d').click(function() {
-            var shape;
-            if (clickCount % 2 === 0) {
-                shape = "<img src='images/X.png' class='image' value=1>";
-            } else {
-                shape = "<img src='images/O.png' class='image' value=10>";
-            }
-            $(this).html(shape);
-            $(this).addClass('occupied');
-            if ($('div').hasClass('occupied')) {
-                // $(this).off();
-            }
-        });
+        // $('#b').click(function() {
 
-        $('#e').click(function() {
-            var shape;
-            if (clickCount % 2 === 0) {
-                shape = "<img src='images/X.png' class='image' value=1>";
-            } else {
-                shape = "<img src='images/O.png' class='image' value=10>";
-            }
-            $(this).html(shape);
-            $(this).addClass('occupied');
-            if ($('div').hasClass('occupied')) {
-                // $(this).off();
-            }
-        });
+        //     var shape;
+        //     if (clickCount % 2 === 0) {
+        //         shape = "<img src='images/X.png' class='image' value=1>";
+        //     } else {
+        //         shape = "<img src='images/O.png' class='image' value=10>";
+        //     }
+        //     $(this).html(shape);
+        //     $(this).addClass('occupied');
+        // });
 
-        $('#f').click(function() {
-            var shape;
-            if (clickCount % 2 === 0) {
-                shape = "<img src='images/X.png' class='image' value=1>";
-            } else {
-                shape = "<img src='images/O.png' class='image' value=10>";
-            }
-            $(this).html(shape);
-            $(this).addClass('occupied');
-            if ($('div').hasClass('occupied')) {
-                // $(this).off();
-            }
-        });
+        // $('#c').click(function() {
 
-        $('#g').click(function() {
-            var shape;
-            if (clickCount % 2 === 0) {
-                shape = "<img src='images/X.png' class='image' value=1>";
-            } else {
-                shape = "<img src='images/O.png' class='image' value=10>";
-            }
-            $(this).html(shape);
-            $(this).addClass('occupied');
-            if ($('div').hasClass('occupied')) {
-                // $(this).off();
-            }
-        });
+        //     var shape;
+        //     if (clickCount % 2 === 0) {
+        //         shape = "<img src='images/X.png' class='image' value=1>";
+        //     } else {
+        //         shape = "<img src='images/O.png' class='image' value=10>";
+        //     }
+        //     $(this).html(shape);
+        //     $(this).addClass('occupied');
+        // });
 
-        $('#h').click(function() {
-            var shape;
-            if (clickCount % 2 === 0) {
-                shape = "<img src='images/X.png' class='image' value=1>";
-            } else {
-                shape = "<img src='images/O.png' class='image' value=10>";
-            }
-            $(this).html(shape);
-            $(this).addClass('occupied');
-            if ($('div').hasClass('occupied')) {
-                // $(this).off();
-            }
-        });
+        // $('#d').click(function() {
 
-        $('#j').click(function() {
-            var shape;
-            if (clickCount % 2 === 0) {
-                shape = "<img src='images/X.png' class='image' value=1>";
-            } else {
-                shape = "<img src='images/O.png' class='image' value=10>";
-            }
-            $(this).html(shape);
-            $(this).addClass('occupied');
-            if ($('div').hasClass('occupied')) {
-                // $(this).off();
-            }
-        });
+        //     var shape;
+        //     if (clickCount % 2 === 0) {
+        //         shape = "<img src='images/X.png' class='image' value=1>";
+        //     } else {
+        //         shape = "<img src='images/O.png' class='image' value=10>";
+        //     }
+        //     $(this).html(shape);
+        //     $(this).addClass('occupied');
+        // });
 
-    }
-    buttonClick();
+        // $('#e').click(function() {
+
+        //     var shape;
+        //     if (clickCount % 2 === 0) {
+        //         shape = "<img src='images/X.png' class='image' value=1>";
+        //     } else {
+        //         shape = "<img src='images/O.png' class='image' value=10>";
+        //     }
+        //     $(this).html(shape);
+        //     $(this).addClass('occupied');
+        // });
+
+        // $('#f').click(function() {
+
+        //     var shape;
+        //     if (clickCount % 2 === 0) {
+        //         shape = "<img src='images/X.png' class='image' value=1>";
+        //     } else {
+        //         shape = "<img src='images/O.png' class='image' value=10>";
+        //     }
+        //     $(this).html(shape);
+        //     $(this).addClass('occupied');
+        // });
+
+        // $('#g').click(function() {
+
+        //     var shape;
+        //     if (clickCount % 2 === 0) {
+        //         shape = "<img src='images/X.png' class='image' value=1>";
+        //     } else {
+        //         shape = "<img src='images/O.png' class='image' value=10>";
+        //     }
+        //     $(this).html(shape);
+        //     $(this).addClass('occupied');
+        // });
+
+        // $('#h').click(function() {
+
+        //     var shape;
+        //     if (clickCount % 2 === 0) {
+        //         shape = "<img src='images/X.png' class='image' value=1>";
+        //     } else {
+        //         shape = "<img src='images/O.png' class='image' value=10>";
+        //     }
+        //     $(this).html(shape);
+        //     $(this).addClass('occupied');
+        // });
+
+        // $('#j').click(function() {
+
+        //     var shape;
+        //     if (clickCount % 2 === 0) {
+        //         shape = "<img src='images/X.png' class='image' value=1>";
+        //     } else {
+        //         shape = "<img src='images/O.png' class='image' value=10>";
+        //     }
+        //     $(this).html(shape);
+        //     $(this).addClass('occupied');
+        // });
 
     // get the value for a position on the board
     // var value = $('.image').val();
@@ -154,46 +150,49 @@ $(function() {
     // };
 
     // create 8 different variables equal to arrays for each win condition
-    var topRow = [];
-    $(".top-row").find(".btn").each(function() {
-        topRow.push(this.id);
-        // console.log(topRow);
-    });
+    // $(".btn-xl").click(function() {
+    //   var selection = $(this).attr("id");
+    //   topRow.push(selection);
+    //   console.log(topRow);
+    // });
+    // var topRow = [];
 
-    var middleRow = [];
-    $(".middle-row").find(".btn").each(function() {
-        middleRow.push(this.id);
-        // console.log(middleRow);
-    });
 
-    var bottomRow = [];
-    $(".bottom-row").find(".btn").each(function() {
-        bottomRow.push(this.id);
-        // console.log(bottomRow);
-    });
 
-    var firstColumn = [];
-    $(".first-col").find(".btn").each(function() {
-        firstColumn.push(this.id);
-        console.log(firstColumn);
-    });
+    // var middleRow = [];
+    // $(".middle-row").find(".btn").each(function() {
+    //     middleRow.push(this.id);
+    //     console.log(middleRow);
+    // });
 
-    var secondColumn = [];
-    $(".second-col").find(".btn").each(function() {
-        secondColumn.push(this.id);
-        console.log(secondColumn);
-    });
+    // var bottomRow = [];
+    // $(".bottom-row").find(".btn").each(function() {
+    //     bottomRow.push(this.id);
+    //     console.log(bottomRow);
+    // });
 
-    var thirdColumn = [];
-    $(".third-col").find(".btn").each(function() {
-        thirdColumn.push(this.id);
-        console.log(thirdColumn);
-    });
+    // var firstColumn = [];
+    // $(".first-col").find(".btn").each(function() {
+    //     firstColumn.push(this.id);
+    //     // console.log(firstColumn);
+    // });
 
-    var rows = [['topRow'], ['middleRow'], ['bottomRow']];
-    console.log(rows);
-    var columns = [['firstColumn'], ['secondColumn'], ['thirdColumn']];
-    console.log(columns);
+    // var secondColumn = [];
+    // $(".second-col").find(".btn").each(function() {
+    //     secondColumn.push(this.id);
+    //     // console.log(secondColumn);
+    // });
+
+    // var thirdColumn = [];
+    // $(".third-col").find(".btn").each(function() {
+    //     thirdColumn.push(this.id);
+    //     // console.log(thirdColumn);
+    // });
+
+    // var rows = [['topRow'], ['middleRow'], ['bottomRow']];
+    // console.log(rows);
+    // var columns = [['firstColumn'], ['secondColumn'], ['thirdColumn']];
+    // console.log(columns);
 
 
     // loop through 8 arrays
@@ -214,12 +213,4 @@ $(function() {
     // alert "Tie!"
     // $('#banner').hmtl('IT'S A TIE!);}
 
-    // clear board function
-    $('.clear').click(function() {
-      debugger
-        $('.btn-xl').html('');
-        $('.btn-xl').removeClass('occupied');
-        clickCount = 0;
-    });
 
-});

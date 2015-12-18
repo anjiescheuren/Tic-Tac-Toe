@@ -44,3 +44,7 @@ img {
 .col-xs-4 {
   padding: 1px;
 }
+
+.occupied {
+  pointer-events: none;
+}
