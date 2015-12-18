@@ -15,30 +15,45 @@
         <div class='row title'>
             <div class='col-md-12 col-sm-12 col-xs-12'>Tic Tac Toe Fo' Sho</div>
         </div>
-        <div class='row'>
-            <div class='col-md-12' id='banner'></div>
+        <div class='row banner'>
+            <div class='col-md-12 col-sm-12 col-xs-12' id='banner'></div>
         </div>
-        <div class='row board'>
-            <div class='col-md-4 col-sm-4 col-xs-4'>
-                <div type='button' class="btn btn-default btn-xl" id='a'></div>
-                <div type='button' class="btn btn-default btn-xl" id='b'></div>
-                <div type='button' class="btn btn-default btn-xl" id='c'></div>
+        <div class='row'>
+          <div class='col-md-4 col-sm-12 col-xs-12 form group'>
+            <div class='player'>
+              <label for="usr">Player X</label>
+              <input type="text" class="form-control player1" placeholder="Enter name" id="usr">
             </div>
-            <div class='col-md-4 col-sm-4 col-xs-4'>
-                <div type='button' class="btn btn-default btn-xl" id='d'></div>
-                <div type='button' class="btn btn-default btn-xl" id='e'></div>
-                <div type='button' class="btn btn-default btn-xl" id='f'></div>
+            <div class='player'>
+              <label for="usr">Player O</label>
+              <input type="text" class="form-control player2" placeholder="Enter name" id="usr">
             </div>
-            <div class='col-md-4 col-sm-4 col-xs-4'>
-                <div type='button' class="btn btn-default btn-xl" id='g'></div>
-                <div type='button' class="btn btn-default btn-xl" id='h'></div>
-                <div type='button' class="btn btn-default btn-xl" id='j'></div>
+            <div class='player warning'>Player X always goes first!</div>
+          </div>
+          <div class='col-md-8 col-sm-12 col-xs-12'>
+            <div class='row board'>
+                <div class='col-md-4 col-sm-4 col-xs-4'>
+                    <div type='button' class="btn btn-default btn-xl" id='a'></div>
+                    <div type='button' class="btn btn-default btn-xl" id='b'></div>
+                    <div type='button' class="btn btn-default btn-xl" id='c'></div>
+                </div>
+                <div class='col-md-4 col-sm-4 col-xs-4'>
+                    <div type='button' class="btn btn-default btn-xl" id='d'></div>
+                    <div type='button' class="btn btn-default btn-xl" id='e'></div>
+                    <div type='button' class="btn btn-default btn-xl" id='f'></div>
+                </div>
+                <div class='col-md-4 col-sm-4 col-xs-4'>
+                    <div type='button' class="btn btn-default btn-xl" id='g'></div>
+                    <div type='button' class="btn btn-default btn-xl" id='h'></div>
+                    <div type='button' class="btn btn-default btn-xl" id='j'></div>
+                </div>
             </div>
+          </div>
         </div>
         <div class='row clear'>
             <input type='button' class='col-md-12 btn btn-default btn-lg' value='New Game'>
         </div>
-    </div>
+      </div>
     <script src='js/main.js'></script>
 </body>
 

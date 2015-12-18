@@ -17,7 +17,7 @@ $(function() {
 
         var shape;
         if (clickCount % 2 === 0) {
-            var playerx = 'Player X';
+            var playerx = $('.player1').val();
             shape = "<img src='images/X.png' class='image'>";
             var selection = $(this).attr("id");
             X.push(selection);
@@ -25,7 +25,7 @@ $(function() {
             tie(X, playerx);
 
         } else {
-            var playero = 'Player O';
+            var playero = $('.player2').val();
             shape = "<img src='images/O.png' class='image'>";
             var selection = $(this).attr("id");
             O.push(selection);
@@ -79,6 +79,8 @@ $(function() {
         $('.btn-xl').removeClass('occupied');
         X = [];
         O = [];
+        $('.player1').val('');
+        $('.player2').val('');
         clickCount = 1;
     });
 
