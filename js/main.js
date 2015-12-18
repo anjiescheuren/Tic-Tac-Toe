@@ -13,6 +13,8 @@ $(function() {
     var X = [];
     var O = [];
 
+    var fosho = new Audio('images/fosho.wav');
+
     $('.btn-xl').click(function() {
 
         var shape;
@@ -41,27 +43,35 @@ $(function() {
     function getWinner(array, player) {
         if (array.includes('a') && array.includes('b') && array.includes('c')) {
             array.push('winner');
+            fosho.play();
             $('#banner').html(player + ' Wins!');
         } else if (array.includes('d') && array.includes('e') && array.includes('f')) {
             array.push('winner');
+            fosho.play();
             $('#banner').html(player + ' Wins!');
         } else if (array.includes('g') && array.includes('h') && array.includes('j')) {
             array.push('winner');
+            fosho.play();
             $('#banner').html(player + ' Wins!');
         } else if (array.includes('a') && array.includes('d') && array.includes('g')) {
             array.push('winner');
+            fosho.play();
             $('#banner').html(player + ' Wins!');
         } else if (array.includes('b') && array.includes('e') && array.includes('h')) {
             array.push('winner');
+            fosho.play();
             $('#banner').html(player + ' Wins!');
         } else if (array.includes('c') && array.includes('f') && array.includes('j')) {
             array.push('winner');
+            fosho.play();
             $('#banner').html(player + ' Wins!');
         } else if (array.includes('a') && array.includes('e') && array.includes('j')) {
             array.push('winner');
+            fosho.play();
             $('#banner').html(player + ' Wins!');
         } else if (array.includes('c') && array.includes('e') && array.includes('g')) {
             array.push('winner');
+            fosho.play();
             $('#banner').html(player + ' Wins!');
         }
     }
